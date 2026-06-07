@@ -13,13 +13,16 @@ namespace btreemath.Solvers
 
         public SolverFactory()
         {
-            solvers = new()
-            {
-                { ExpressionTypeEnum.Sum, new SumSolver() },
-                { ExpressionTypeEnum.Subtract, new SubtractionSolver() },
-                { ExpressionTypeEnum.Multiply, new MultiplicationSolver() },
-                { ExpressionTypeEnum.Divide, new DivisionSolver() }
-            };
+            List<IExpressionSolver> solverList =
+            [
+                new SumSolver(),
+                new MultiplicationSolver(),
+                new SubtractionSolver(),
+                new DivisionSolver(),
+                new ExponentiationSolver()
+            ];
+
+            solvers = solverList.ToDictionary(solver => solver.ExpressionType, solver => solver);
         }
 
         public IExpressionSolver GetSolver(ExpressionTypeEnum expressionType)

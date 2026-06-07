@@ -5,5 +5,6 @@ public enum ExpressionTypeEnum
     Sum,
     Multiply,
     Subtract,
-    Divide
+    Divide,
+    Exponentiation
 }
