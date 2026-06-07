@@ -26,6 +26,12 @@ var complex = new ExpressionNode(left, right, ExpressionTypeEnum.Multiply);
 Console.WriteLine("Complex expression: (2 + 3) * (7 - (4 / 2))");
 Console.WriteLine($"Result: {evaluator.Evaluate(complex)}");
 
+var evenMoreComplex = new ExpressionNode((BaseNode)complex.Clone(), (BaseNode)complex.Clone(), ExpressionTypeEnum.Multiply);
+Console.WriteLine("Even more complex expression: ((2 + 3) * (7 - (4 / 2)) * (2 + 3) * (7 - (4 / 2)))");
+Console.WriteLine($"Result: {evaluator.Evaluate(evenMoreComplex)}");
+
 Console.WriteLine();
 Console.WriteLine("Press any key to exit...");
 Console.ReadKey();
+
+

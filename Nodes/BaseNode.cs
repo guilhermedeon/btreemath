@@ -1,3 +1,6 @@
 ﻿namespace btreemath.Nodes;
 
-public abstract class BaseNode {}
+public abstract class BaseNode : ICloneable
+{
+    public abstract object Clone();
+}
