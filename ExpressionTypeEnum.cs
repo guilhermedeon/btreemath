@@ -3,8 +3,8 @@
 public enum ExpressionTypeEnum
 {
     Sum,
-    Multiply,
-    Subtract,
-    Divide,
+    Multiplication,
+    Subtraction,
+    Division,
     Exponentiation
 }

@@ -19,9 +19,9 @@ Console.WriteLine();
 
 // Complex expression: (2 + 3) * (7 - (4 / 2))
 var left = new ExpressionNode(new ValueNode(2), new ValueNode(3), ExpressionTypeEnum.Sum);
-var innerDiv = new ExpressionNode(new ValueNode(4), new ValueNode(2), ExpressionTypeEnum.Divide);
-var right = new ExpressionNode(new ValueNode(7), innerDiv, ExpressionTypeEnum.Subtract);
-var complex = new ExpressionNode(left, right, ExpressionTypeEnum.Multiply);
+var innerDiv = new ExpressionNode(new ValueNode(4), new ValueNode(2), ExpressionTypeEnum.Division);
+var right = new ExpressionNode(new ValueNode(7), innerDiv, ExpressionTypeEnum.Subtraction);
+var complex = new ExpressionNode(left, right, ExpressionTypeEnum.Multiplication);
 
 Console.WriteLine("Complex expression: (2 + 3) * (7 - (4 / 2))");
 Console.WriteLine($"Result: {evaluator.Evaluate(complex)}");
